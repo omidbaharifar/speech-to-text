@@ -1,0 +1,47 @@
+@font-face {
+  font-family: yekan;
+  src: url(./Yekan.woff2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  gap: 15px;
+  flex-direction: column;
+}
+
+button {
+  padding: 5px 10px;
+  border: solid 2px #ff2800;
+  color: #ff2800;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  font-family: yekan;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff2800;
+  color: #fff;
+}
+
+div {
+  display: flex;
+  gap: 10px;
+}
+
+p {
+  font-size: 2rem;
+  padding: 10px;
+}

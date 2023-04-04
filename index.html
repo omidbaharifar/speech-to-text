@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fa">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وویس به متن</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p id="result"></p>
+    <div>
+      <button onclick="speechToText.start()">start</button>
+      <button onclick="speechToText.stop()">stop</button>
+    </div>
+
+    <script>
+      let speechToText = new webkitSpeechRecognition();
+      speechToText.continuous = true;
+      speechToText.interimResults = true;
+      speechToText.onresult = (event) => {
+        let finalText = "";
+        Object.values(event.results).forEach((item) => {
+          finalText += item[0].transcript;
+        });
+        document.getElementById("result").innerHTML = finalText;
+      };
+    </script>
+  </body>
+</html>
